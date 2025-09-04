@@ -151,24 +151,5 @@ Covers:
 
 ---
 
-## 👨‍💻 Author
-
-**Your Name** – Flutter Developer
-📧 [your.email@example.com](mailto:your.email@example.com)
-
 > Made with ❤️ using Flutter
 
-```
-
----
-
-✅ This version includes:  
-- A **grid-like screenshot gallery** with labels  
-- Emojis for a modern, friendly look  
-- Clear separation of sections for readability  
-- Professional structure suitable for a portfolio  
-
-If you want, I can **generate a fully ready GitHub-style grid with real placeholder screenshots** that look like a polished app preview.  
-
-Do you want me to do that next?
-```
