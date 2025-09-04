@@ -2,7 +2,6 @@ Absolutely! Let’s make your **README.md** visually stunning, with a **grid lay
 
 Here’s a polished version:
 
-````markdown
 # 🌟 Mini Job Board App
 
 A **Flutter mobile app** that lets candidates browse jobs and apply with ease.  
