@@ -13,7 +13,7 @@ import 'package:process_run/shell_run.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize dependency injection
+  
   await di.init();
   startPythonServer();
   final authBloc = di.sl<AuthBloc>();

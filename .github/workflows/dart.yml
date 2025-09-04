@@ -7,7 +7,7 @@ name: "Conditional Build"
 
 on:
   push:
-    branches: [master, dev]
+    branches: [main, dev]
 
 jobs:
   dev-job:
@@ -24,7 +24,7 @@ jobs:
         run: echo "Pushed to dev branch. No build or release triggered."
 
   main-job:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     runs-on: macos-latest
     name: Build  APK (Master Only)
     permissions:
