@@ -17,7 +17,7 @@ Designed with **UI/UX**, **offline-first behavior**, and **real-world edge case 
 - Secure local storage implementation
 
 ### 💼 Job Listing
-- Browse jobs from a local JSON file (mock API)
+- Browse jobs from a local JSON file
 - Each job displays:
   - **Title**
   - **Company**
@@ -31,7 +31,7 @@ Designed with **UI/UX**, **offline-first behavior**, and **real-world edge case 
   - Name
   - Email
   - Phone
-- Applications stored locally using **Hive** or **SQLite**
+- Applications stored locally using **SQLite**
 - Offline support with queued applications syncing online
 
 ### 🎨 UI & UX
