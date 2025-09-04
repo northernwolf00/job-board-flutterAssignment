@@ -22,9 +22,10 @@ dependencies:
   flutter_otp_text_field: ^1.5.1+1
   shared_preferences: ^2.5.3
   provider: ^6.1.1
-  file_picker: ^6.1.1
+  file_picker: ^10.3.2
   syncfusion_flutter_pdf: ^23.2.4
   connectivity_plus: ^5.0.2
+  get_it: ^8.2.0
 
 dev_dependencies:
   flutter_test:

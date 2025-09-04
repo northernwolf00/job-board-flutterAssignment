@@ -21,17 +21,27 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
     on<SyncApplications>(_onSyncApplications);
   }
 
-  Future<void> _onApplyToJob(ApplyToJob event, Emitter<ApplicationState> emit) async {
+  Future<void> _onApplyToJob(
+    ApplyToJob event,
+    Emitter<ApplicationState> emit,
+  ) async {
     emit(ApplicationLoading());
     try {
       await _applyToJobUseCase.execute(event.jobId, event.cvFile);
+
+      final applications = await _getApplicationsUseCase.execute();
+
+      emit(ApplicationsLoaded(applications));
       emit(ApplicationSuccess('Application submitted successfully!'));
     } catch (e) {
       emit(ApplicationError('Failed to submit application: $e'));
     }
   }
 
-  Future<void> _onLoadApplications(LoadApplications event, Emitter<ApplicationState> emit) async {
+  Future<void> _onLoadApplications(
+    LoadApplications event,
+    Emitter<ApplicationState> emit,
+  ) async {
     emit(ApplicationLoading());
     try {
       final applications = await _getApplicationsUseCase.execute();
@@ -41,21 +51,27 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
     }
   }
 
-  Future<void> _onLoadApplicationsForJob(LoadApplicationsForJob event, Emitter<ApplicationState> emit) async {
+  Future<void> _onLoadApplicationsForJob(
+    LoadApplicationsForJob event,
+    Emitter<ApplicationState> emit,
+  ) async {
     emit(ApplicationLoading());
     try {
-      final applications = await _getApplicationsUseCase.executeForJob(event.jobId);
+      final applications = await _getApplicationsUseCase.executeForJob(
+        event.jobId,
+      );
       emit(ApplicationsLoaded(applications));
     } catch (e) {
       emit(ApplicationError('Failed to load applications: $e'));
     }
   }
 
-  Future<void> _onSyncApplications(SyncApplications event, Emitter<ApplicationState> emit) async {
+  Future<void> _onSyncApplications(
+    SyncApplications event,
+    Emitter<ApplicationState> emit,
+  ) async {
     try {
       await _applicationRepository.syncApplications();
-    } catch (e) {
-      // Sync errors are handled silently or shown as toast
-    }
+    } catch (e) {}
   }
 }

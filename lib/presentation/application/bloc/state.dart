@@ -11,12 +11,21 @@ class ApplicationSuccess extends ApplicationState {
   ApplicationSuccess(this.message);
 }
 
-class ApplicationsLoaded extends ApplicationState {
-  final List<Application> applications;
-  ApplicationsLoaded(this.applications);
-}
+// class ApplicationsLoaded extends ApplicationState {
+//   final List<Application> applications;
+//   ApplicationsLoaded(this.applications);
+// }
 
 class ApplicationError extends ApplicationState {
   final String message;
   ApplicationError(this.message);
+}
+
+class ApplicationsLoaded extends ApplicationState {
+  final List<Application> applications;
+
+  ApplicationsLoaded(this.applications);
+
+  List<String> get appliedJobIds =>
+      applications.map((a) => a.jobId).toList();
 }

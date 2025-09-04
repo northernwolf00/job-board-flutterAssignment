@@ -14,7 +14,9 @@ class ApplicationRepositoryImpl implements ApplicationRepository {
   final DatabaseHelper _databaseHelper;
   final ConnectivityService _connectivityService;
 
-  ApplicationRepositoryImpl(this._databaseHelper, this._connectivityService);
+  ApplicationRepositoryImpl(this._databaseHelper,
+   this._connectivityService
+   );
 
   @override
   Future<void> saveApplication(Application application) async {
@@ -51,7 +53,7 @@ class ApplicationRepositoryImpl implements ApplicationRepository {
       await Future.delayed(const Duration(milliseconds: 500));
       await _databaseHelper.updateApplicationSyncStatus(application.id, true);
     } catch (e) {
-      print('Failed to sync application: ${application.id}');
+      print('Failed  application: ${application.id}');
     }
   }
 }
