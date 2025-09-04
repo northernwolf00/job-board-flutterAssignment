@@ -1,10 +1,12 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:interviews_flutter_assignment/core/utils/auth_preferences.dart';
+import 'package:interviews_flutter_assignment/data/models/job.dart';
 import 'package:interviews_flutter_assignment/presentation/auth/bloc/bloc.dart';
 import 'dart:async';
 import 'package:interviews_flutter_assignment/presentation/auth/bloc/state.dart';
 import 'package:interviews_flutter_assignment/presentation/auth/pages/auth_screen.dart';
+import 'package:interviews_flutter_assignment/presentation/jobs/pages/job_detail_screen.dart';
 import 'package:interviews_flutter_assignment/presentation/jobs/pages/jobs_list_scree.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -21,6 +23,13 @@ Future<GoRouter> createAppRouter(AuthBloc authBloc) async {
     routes: [
       GoRoute(path: '/', builder: (context, state) => const AuthScreen()),
       GoRoute(path: '/jobs', builder: (context, state) => const JobsListScreen()),
+      GoRoute(
+      path: '/jobs/:id',
+      builder: (context, state) {
+        final job = state.extra as Job; 
+        return JobDetailScreen(job: job);
+      },
+    ),
     ],
     redirect: (context, state) {
       final authState = authBloc.state;

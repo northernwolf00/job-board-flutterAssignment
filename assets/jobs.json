@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "title": "Flutter Developer",
+    "company": "Tech Corp",
+    "description": "Build mobile apps using Flutter.",
+    "status": "open"
+  },
+  {
+    "id": 2,
+    "title": "Backend Engineer",
+    "company": "Data Solutions",
+    "description": "Develop APIs and manage databases.",
+    "status": "closed"
+  },
+  {
+    "id": 3,
+    "title": "Prometheus Engineer",
+    "company": "Monitoring Solutions",
+    "description": "Design and maintain monitoring systems using Prometheus.",
+    "status": "open"
+  },
+  {
+    "id": 4,
+    "title": "KMP Developer",
+    "company": "Mobile Innovations",
+    "description": "Develop cross-platform apps using Kotlin Multiplatform Mobile (KMP).",
+    "status": "open"
+  },
+  {
+    "id": 5,
+    "title": "DevOps Engineer",
+    "company": "CloudOps Inc",
+    "description": "Manage CI/CD pipelines, cloud infrastructure, and deployments.",
+    "status": "closed"
+  },
+  {
+    "id": 6,
+    "title": "Frontend Developer",
+    "company": "WebWorks",
+    "description": "Build responsive and interactive web applications using React or Angular.",
+    "status": "open"
+  },
+  {
+    "id": 7,
+    "title": "QA Engineer",
+    "company": "QualitySoft",
+    "description": "Test software products, write test cases, and ensure product quality.",
+    "status": "open"
+  },
+  {
+    "id": 8,
+    "title": "UI/UX Designer",
+    "company": "Creative Studio",
+    "description": "Design user interfaces and user experiences for web and mobile apps.",
+    "status": "closed"
+  },
+  {
+    "id": 9,
+    "title": "Data Scientist",
+    "company": "AI Labs",
+    "description": "Analyze data and build machine learning models to drive business decisions.",
+    "status": "open"
+  },
+  {
+    "id": 10,
+    "title": "Full Stack Developer",
+    "company": "Tech Innovators",
+    "description": "Develop both frontend and backend systems for scalable applications.",
+    "status": "open"
+  }
+]
+
