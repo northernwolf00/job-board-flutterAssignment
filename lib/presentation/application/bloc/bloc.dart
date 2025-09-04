@@ -21,6 +21,8 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
     on<SyncApplications>(_onSyncApplications);
   }
 
+
+
   Future<void> _onApplyToJob(
     ApplyToJob event,
     Emitter<ApplicationState> emit,

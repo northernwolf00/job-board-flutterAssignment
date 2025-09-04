@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 
+
+
 class CVParserService {
   Future<Map<String, String?>> parseCVFromFile(File file) async {
     try {
@@ -18,17 +20,13 @@ class CVParserService {
 
       return _extractInformation(text);
     } catch (e) {
-      return {
-        'name': null,
-        'email': null,
-        'phone': null,
-      };
+      return {'name': null, 'email': null, 'phone': null};
     }
   }
 
   Map<String, String?> _extractInformation(String text) {
-    final emailRegex = RegExp(
-        r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b');
+    final emailRegex =
+        RegExp(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b');
     final phoneRegex =
         RegExp(r'(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}');
 
@@ -55,3 +53,4 @@ class CVParserService {
     };
   }
 }
+

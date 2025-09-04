@@ -37,20 +37,35 @@ class _JobDetailScreenState extends State<JobDetailScreen> {
     });
   }
 
-  Future<void> _applyToJob() async {
-    final result = await FilePicker.platform.pickFiles(
-      type: FileType.custom,
-      allowedExtensions: ['pdf'],
-      allowMultiple: false,
-    );
+  // Future<void> _applyToJob() async {
+  //   final result = await FilePicker.platform.pickFiles(
+  //     type: FileType.custom,
+  //     allowedExtensions: ['pdf'],
+  //     allowMultiple: false,
+  //   );
 
-    if (result != null && result.files.isNotEmpty) {
-      final file = File(result.files.first.path!);
-      if (mounted) {
-        context.read<ApplicationBloc>().add(ApplyToJob(widget.jobId, file));
-      }
+  //   if (result != null && result.files.isNotEmpty) {
+  //     final file = File(result.files.first.path!);
+  //     if (mounted) {
+  //       context.read<ApplicationBloc>().add(ApplyToJob(widget.jobId, file));
+  //     }
+  //   }
+  
+  Future<void> _applyToJob() async {
+  final result = await FilePicker.platform.pickFiles(
+    type: FileType.custom,
+    allowedExtensions: ['pdf'],
+    allowMultiple: false,
+  );
+
+  if (result != null && result.files.isNotEmpty) {
+    final file = File(result.files.first.path!);
+    if (mounted) {
+      context.read<ApplicationBloc>().add(ApplyToJob(widget.jobId, file));
     }
   }
+}
+
 
   @override
   Widget build(BuildContext context) {

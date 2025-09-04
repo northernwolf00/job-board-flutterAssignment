@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:interviews_flutter_assignment/core/services/connectivity_service.dart';
 import 'package:interviews_flutter_assignment/core/services/cv_parser_service.dart';
+import 'package:interviews_flutter_assignment/core/services/python_cv_service.dart';
 import 'package:interviews_flutter_assignment/core/utils/auth_preferences.dart';
 import 'package:interviews_flutter_assignment/data/datasources/database_helper.dart';
 import 'package:interviews_flutter_assignment/data/repositories/application_repository.dart';
@@ -22,6 +23,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => CVParserService());
   sl.registerLazySingleton(() => ConnectivityService());
   sl.registerLazySingleton(() => AuthPreferences());
+  sl.registerLazySingleton(() => PythonCVService());
 
 
   sl.registerLazySingleton<JobRepository>(() => JobRepositoryImpl());

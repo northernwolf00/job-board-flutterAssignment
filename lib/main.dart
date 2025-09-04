@@ -6,6 +6,8 @@ import 'package:interviews_flutter_assignment/presentation/application/bloc/bloc
 import 'package:interviews_flutter_assignment/presentation/auth/bloc/bloc.dart';
 import 'package:interviews_flutter_assignment/presentation/jobs/bloc/bloc.dart';
 import 'app_router.dart';
+import 'package:process_run/shell_run.dart';
+
 
 
 void main() async {
@@ -13,7 +15,7 @@ void main() async {
 
   // Initialize dependency injection
   await di.init();
-
+  startPythonServer();
   final authBloc = di.sl<AuthBloc>();
   final router = await createAppRouter(authBloc);
 
@@ -27,6 +29,18 @@ void main() async {
       child: MyApp(appRouter: router),
     ),
   );
+}
+
+void startPythonServer() async {
+  final shell = Shell();
+
+  try {
+    
+    await shell.run('lib/server.py');
+    print('Python server started');
+  } catch (e) {
+    print('Failed to start Python server: $e');
+  }
 }
 
 class MyApp extends StatelessWidget {

@@ -14,9 +14,7 @@ class ApplicationRepositoryImpl implements ApplicationRepository {
   final DatabaseHelper _databaseHelper;
   final ConnectivityService _connectivityService;
 
-  ApplicationRepositoryImpl(this._databaseHelper,
-   this._connectivityService
-   );
+  ApplicationRepositoryImpl(this._databaseHelper, this._connectivityService);
 
   @override
   Future<void> saveApplication(Application application) async {
@@ -28,32 +26,32 @@ class ApplicationRepositoryImpl implements ApplicationRepository {
   }
 
   @override
-  Future<List<Application>> getApplications() async {
-    return await _databaseHelper.getApplications();
+  Future<List<Application>> getApplications() {
+    return _databaseHelper.getApplications();
   }
 
   @override
-  Future<List<Application>> getApplicationsByJobId(String jobId) async {
-    return await _databaseHelper.getApplicationsByJobId(jobId);
+  Future<List<Application>> getApplicationsByJobId(String jobId) {
+    return _databaseHelper.getApplicationsByJobId(jobId);
   }
 
   @override
   Future<void> syncApplications() async {
     if (!await _connectivityService.isConnected) return;
-    
+
     final unsyncedApplications = await _databaseHelper.getUnsyncedApplications();
-    
+
     for (final application in unsyncedApplications) {
       await _syncSingleApplication(application);
     }
   }
-
   Future<void> _syncSingleApplication(Application application) async {
     try {
       await Future.delayed(const Duration(milliseconds: 500));
       await _databaseHelper.updateApplicationSyncStatus(application.id, true);
+      print('Synced application: ${application.id}');
     } catch (e) {
-      print('Failed  application: ${application.id}');
+      print('Failed to sync application ${application.id}: $e');
     }
   }
 }

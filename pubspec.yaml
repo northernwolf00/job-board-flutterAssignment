@@ -26,6 +26,8 @@ dependencies:
   syncfusion_flutter_pdf: ^23.2.4
   connectivity_plus: ^5.0.2
   get_it: ^8.2.0
+  http: ^1.5.0
+  process_run: ^1.2.4
 
 dev_dependencies:
   flutter_test:
