@@ -61,7 +61,7 @@ Designed with **UI/UX**, **offline-first behavior**, and **real-world edge case 
 <tr>
 <td><img src="screenshots/photo1.jpeg" alt="Job List" width="200"/></td>
 <td><img src="screenshots/photo2.jpeg" alt="Job Detail" width="200"/></td>
-<td><img src="screenshots/photo3.jpeg" alt="Applications" width="200"/></td>
+<td><img src="screenshots/photo5.jpeg" alt="Applications" width="200"/></td>
 <td><img src="screenshots/photo4.jpeg" alt="Apply CV" width="200"/></td>
 </tr>
 
