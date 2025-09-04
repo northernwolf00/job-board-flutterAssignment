@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:interviews_flutter_assignment/presentation/application/bloc/bloc.dart';
 import 'package:interviews_flutter_assignment/presentation/application/bloc/event.dart';
+import 'package:interviews_flutter_assignment/presentation/auth/bloc/bloc.dart';
+import 'package:interviews_flutter_assignment/presentation/auth/bloc/event.dart';
 
 import 'package:interviews_flutter_assignment/presentation/jobs/bloc/bloc.dart';
 import 'package:interviews_flutter_assignment/presentation/jobs/bloc/event.dart';
@@ -54,8 +56,7 @@ class _JobsListScreenState extends State<JobsListScreen> {
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () {
-              
-              context.go('/');
+              context.read<AuthBloc>().add(Logout());
             },
           ),
         ],
